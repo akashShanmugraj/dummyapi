@@ -28,6 +28,43 @@ app.get('/intersection', (req, res) => {
   res.status(200).json(data);
 });
 
+app.get("/detectiondata", (req, res) => {
+    const data = [
+        {
+          "name": "Cars",
+          "population": 456,
+          "color": "#3B82F6",
+          "legendFontColor": "#94A3B8"
+        },
+        {
+          "name": "Trucks",
+          "population": 87,
+          "color": "#8B5CF6",
+          "legendFontColor": "#94A3B8"
+        },
+        {
+          "name": "Motorcycles",
+          "population": 34,
+          "color": "#10B981",
+          "legendFontColor": "#94A3B8"
+        },
+        {
+          "name": "Buses",
+          "population": 12,
+          "color": "#F59E0B",
+          "legendFontColor": "#94A3B8"
+        },
+        {
+          "name": "Pedestrians",
+          "population": 231,
+          "color": "#EF4444",
+          "legendFontColor": "#94A3B8"
+        }
+        ];
+    res.status(200).json(data);
+}
+);
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
