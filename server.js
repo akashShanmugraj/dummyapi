@@ -8,12 +8,26 @@ app.get('/', (req, res) => {
 
 app.get('/trafficdata', (req, res) => {
   const data = {
-    "labels": ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
-    "datasets": [
-      {
-        "data": [90, 78, 82, 75, 68, 71, 85]
-      }
-    ]
+    'SIG001': {
+      labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00'],
+      datasets: [{ data: [65, 78, 82, 75, 68, 71, 85] }],
+      title: 'Main St & 5th Ave Traffic'
+    },
+    'SIG002': {
+      labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00'],
+      datasets: [{ data: [85, 92, 88, 95, 90, 92, 98] }],
+      title: 'Broadway & 42nd St Traffic'
+    },
+    'SIG003': {
+      labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00'],
+      datasets: [{ data: [72, 75, 68, 70, 74, 76, 80] }],
+      title: 'Park Ave & 34th St Traffic'
+    },
+    'SIG004': {
+      labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00'],
+      datasets: [{ data: [60, 65, 62, 58, 64, 70, 72] }],
+      title: 'Lexington & 59th St Traffic'
+    }
   };
   res.status(200).json(data);
 });
@@ -66,5 +80,5 @@ app.get("/detectiondata", (req, res) => {
 );
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
